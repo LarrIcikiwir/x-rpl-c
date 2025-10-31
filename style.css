@@ -250,3 +250,73 @@ footer {
   .balances { grid-template-columns: 1fr; }
   .schedule { grid-template-columns: 1fr; }
 }
+
+/* ===== 🌙 DARK MODE ===== */
+body.dark {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --accent: #60a5fa;
+  --accent-light: #334155;
+  --muted: #cbd5e1;
+  color: #e2e8f0;
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+}
+
+body.dark header {
+  background: #1e293b;
+  color: #e2e8f0;
+}
+
+body.dark .card {
+  background: var(--card);
+  border-color: #334155;
+}
+
+body.dark .day,
+body.dark .balance-card {
+  background: var(--card);
+}
+
+body.dark .transactions {
+  background: #1e293b;
+}
+
+body.dark button {
+  color: white;
+}
+
+body.dark .navbar {
+  background: #1e293b;
+  color: white;
+}
+
+/* ===== 🌐 NAVBAR ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--card);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 18px;
+  box-shadow: var(--shadow);
+  border-bottom: 1px solid #eaf1ff;
+}
+
+.navbar h2 {
+  margin: 0;
+  color: var(--accent);
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#theme-toggle:hover {
+  transform: rotate(20deg);
+}
