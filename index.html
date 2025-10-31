@@ -7,11 +7,23 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- 🌐 Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <h2>X RPL C</h2>
+    </div>
+    <div class="nav-right">
+      <button id="theme-toggle" title="Ganti tema">🌙</button>
+    </div>
+  </nav>
+
+  <!-- 🏫 Header -->
   <header>
     <h1>Website Kelas X RPL C</h1>
     <p class="subtitle">Absensi • Uang Kas • Jadwal Mapel • Jadwal Piket</p>
   </header>
 
+  <!-- 📋 Konten utama -->
   <main class="container">
     <section class="card" id="attendance-section">
       <h2>Absensi</h2>
@@ -61,10 +73,30 @@
     </section>
   </main>
 
+  <!-- 👣 Footer -->
   <footer>
     <small>Website Kelas X RPL C | Data tersimpan di browser (localStorage).</small>
   </footer>
 
   <script src="script.js"></script>
+
+  <!-- 🌗 Dark Mode Toggle -->
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // load mode dari localStorage
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark');
+      toggleBtn.textContent = '☀️';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      const darkMode = body.classList.contains('dark');
+      localStorage.setItem('theme', darkMode ? 'dark' : 'light');
+      toggleBtn.textContent = darkMode ? '☀️' : '🌙';
+    });
+  </script>
 </body>
 </html>
