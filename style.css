@@ -320,3 +320,20 @@ body.dark .navbar {
 #theme-toggle:hover {
   transform: rotate(20deg);
 }
+
+/* ===== 🌗 TRANSISI SMOOTH SAAT GANTI MODE ===== */
+* {
+  transition: background-color 0.4s ease, color 0.4s ease,
+              border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+body.dark,
+body {
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* Supaya animasi tidak ganggu elemen yang muncul/dihapus (misal list absensi) */
+.list, .transactions, .balances, .day, .card, header, footer, .navbar {
+  transition: background-color 0.4s ease, color 0.4s ease,
+              box-shadow 0.4s ease, border-color 0.4s ease;
+}
